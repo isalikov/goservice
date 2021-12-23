@@ -7,4 +7,4 @@ Go grpc service boilerplate
 - [Protobuf compiler](https://grpc.io/docs/protoc-installation)
 
 ### Usage
-- Fill free to explore `Makefile` for usage
+- Feel free explore Makefile for usage
