@@ -26,7 +26,7 @@ func Connect(addr string, t time.Duration) (proto.GoServiceClient, error) {
 	if err != nil {
 		return nil, &grpcError{
 			Message: err.Error(),
-			Service: fmt.Sprintf("Service: %v, URL: %v", "aircrafts-service", addr),
+			Service: fmt.Sprintf("Service: %v, URL: %v", "goservice", addr),
 		}
 	}
 
