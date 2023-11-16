@@ -1,25 +1,23 @@
 package main
 
 import (
-	"github.com/isalikov/goservice/internal/env"
-	"github.com/isalikov/goservice/internal/server"
-	"github.com/isalikov/goservice/internal/utils"
+	"context"
+	"github.com/sethvargo/go-envconfig"
+	"goservice/internal/env"
+	"goservice/internal/server"
 	"log"
 )
 
-func main()  {
-	envConfig := &env.Config{}
+var ctx = context.Background()
 
-	err := env.Parse(envConfig)
-	if err != nil {
-		log.Fatalln(err, "Parsing environment")
+func main() {
+	config := &env.Config{}
+
+	if err := envconfig.Process(ctx, config); err != nil {
+		log.Fatalln("Fatal Error: Parsing OS ENV")
 	}
 
-	logger := &utils.Logger{Debug: envConfig.Env != "release"}
-	logger.Init(envConfig.SentryDsn, envConfig.Release)
-
-	err = server.Serve(envConfig)
-	if err != nil {
-		logger.Error(err, "gRPC")
+	if err := server.Serve(config.Port); err != nil {
+		log.Fatalln("Fatal Error: Start Up gRPC server")
 	}
 }

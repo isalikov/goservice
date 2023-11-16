@@ -1,10 +1,8 @@
-FROM golang:1.17
+FROM golang:1.21
 
 WORKDIR /app
 COPY . .
-RUN make vendor \
-    && make build
-
+RUN make vendor && make
 WORKDIR ./target/
 
 CMD ["./goservice"]
