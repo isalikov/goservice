@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package goservice;
+package go.service;
 option go_package = "github.com/isalikov/goservice/pkg/service";
 
 service GoService {

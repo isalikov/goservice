@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"github.com/isalikov/goservice/internal/env"
+	"github.com/isalikov/goservice/internal/server"
 	"github.com/sethvargo/go-envconfig"
-	"goservice/internal/env"
-	"goservice/internal/server"
 	"log"
 )
 

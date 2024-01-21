@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 	"fmt"
+	proto "github.com/isalikov/goservice/pkg/api/grpc"
 	"google.golang.org/grpc"
-	proto "goservice/pkg/api/grpc"
 	"net"
 )
 
