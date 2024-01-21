@@ -1,4 +1,4 @@
-module goservice
+module github.com/isalikov/goservice
 
 go 1.21.3
 
